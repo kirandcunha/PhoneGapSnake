@@ -3,10 +3,10 @@
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0"
 	id="com.krn.core" version="1.0">
 
-	<name>Basic Core</name>
+	<name>Snake</name>
 
 	<description>
-		Provides the core on which an app can be built
+		Basic snake game
 	</description>
 
 	<author>
@@ -28,11 +28,5 @@
 		gap:qualifier="xhdpi" />
 	<icon src="res/mipmap-xxhdpi/ic_launcher.png" gap:platform="android"
 		gap:qualifier="xxhdpi" />
-
-	<gap:config-file platform="android" parent="/manifest"
-		overwrite="true">
-		<application android:theme="@android:style/Theme.NoTitleBar"></application>
-	</gap:config-file>
-	
 
 </widget>
