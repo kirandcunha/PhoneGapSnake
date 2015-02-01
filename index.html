@@ -9,9 +9,8 @@
 <body>
 
 	<!-- Lets make a simple snake game -->
-	<canvas id="canvas" width="450" height="450"></canvas>
+	<canvas id="canvas"></canvas>
 
-	<p id="direction">EMpty</p>
 	<script>
 		$(document).ready(
 				function() {
@@ -37,6 +36,10 @@
 						//finally lets display the score
 						score = 0;
 
+						canvas = document.getElementById("canvas");
+						canvas.width = document.body.clientWidth;
+						canvas.height = document.body.clientHeight;
+						
 						//Lets move the snake now using a timer which will trigger the paint function
 						//every 60ms
 						if (typeof game_loop != "undefined")
@@ -179,16 +182,8 @@
 									swipe : function(event, direction,
 											distance, duration, fingerCount,
 											fingerData) {
-										$('#direction').text(
+										d = $('#direction').text(
 												"You swiped " + direction);
-// 										if (key == "37" && d != "right")
-// 											d = "left";
-// 										else if (key == "38" && d != "down")
-// 											d = "up";
-// 										else if (key == "39" && d != "left")
-// 											d = "right";
-// 										else if (key == "40" && d != "up")
-// 											d = "down";
 									}
 								});
 					});
