@@ -2,14 +2,16 @@
 <html>
 <head>
 <script
-	src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
-	type="text/javascript"></script>
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 </head>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.4/jquery.touchSwipe.min.js"></script>
 <body>
 
 	<!-- Lets make a simple snake game -->
 	<canvas id="canvas" width="450" height="450"></canvas>
 
+	<p id="direction">EMpty</p>
 	<script>
 		$(document).ready(
 				function() {
@@ -145,6 +147,20 @@
 						ctx.strokeStyle = "white";
 						ctx.strokeRect(x * cw, y * cw, cw, cw);
 					}
+					$(function() {
+						$("#test")
+								.swipe(
+										{
+											//Generic swipe handler for all directions
+											swipe : function(event, direction,
+													distance, duration,
+													fingerCount, fingerData) {
+												$(this).text(
+														"You swiped "
+																+ direction);
+											}
+										});
+					});
 
 					function check_collision(x, y, array) {
 						//This function will check if the provided x/y coordinates exist
@@ -156,8 +172,25 @@
 						return false;
 					}
 
-					$("#myContainer").on("swipe", function(event) {
-						alert("I got swiped!");
+					$(function() {
+						$("#canvas").swipe(
+								{
+									//Generic swipe handler for all directions
+									swipe : function(event, direction,
+											distance, duration, fingerCount,
+											fingerData) {
+										$('#direction').text(
+												"You swiped " + direction);
+// 										if (key == "37" && d != "right")
+// 											d = "left";
+// 										else if (key == "38" && d != "down")
+// 											d = "up";
+// 										else if (key == "39" && d != "left")
+// 											d = "right";
+// 										else if (key == "40" && d != "up")
+// 											d = "down";
+									}
+								});
 					});
 
 					//Lets add the keyboard controls now
