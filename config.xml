@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0"
+	id="com.krn.core" version="1.0">
+
+	<name>Basic Core</name>
+
+	<description>
+		Provides the core on which an app can be built
+	</description>
+
+	<author>
+		Kiran D'Cunha
+	</author>
+
+	<preference name="permissions" value="none" />
+
+	<gap:splash src="res/Splash/splash.png" gap:platform="android" />
+	<preference name="SplashScreenDelay" value="3000" />
+
+	<icon src="res/mipmap-ldpi/ic_launcher.png" gap:platform="android"
+		gap:qualifier="ldpi" />
+	<icon src="res/mipmap-mdpi/ic_launcher.png" gap:platform="android"
+		gap:qualifier="mdpi" />
+	<icon src="res/mipmap-hdpi/ic_launcher.png" gap:platform="android"
+		gap:qualifier="hdpi" />
+	<icon src="res/mipmap-xhdpi/ic_launcher.png" gap:platform="android"
+		gap:qualifier="xhdpi" />
+	<icon src="res/mipmap-xxhdpi/ic_launcher.png" gap:platform="android"
+		gap:qualifier="xxhdpi" />
+
+	<gap:config-file platform="android" parent="/manifest"
+		overwrite="true">
+		<application android:theme="@android:style/Theme.NoTitleBar"></application>
+	</gap:config-file>
+	
+</config-file>
+
+
+</widget>
