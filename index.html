@@ -19,8 +19,8 @@
 				function() {
 					//Canvas stuff
 					var canvas = $("#canvas")[0];
-					canvas.width = screen.width;
-					canvas.height = screen.height;
+					canvas.width = screen.width * 0.80;
+					canvas.height = screen.height * 0.80;
 					var ctx = canvas.getContext("2d");
 					var w = $("#canvas").width();
 					var h = $("#canvas").height();
@@ -141,7 +141,7 @@
 						paint_cell(food.x, food.y);
 						//Lets paint the score
 						var score_text = "Score: " + score;
-						ctx.fillText(score_text, 5, h - 5);
+						ctx.fillText(score_text, 5, 15);
 					}
 
 					//Lets first create a generic function to paint cells

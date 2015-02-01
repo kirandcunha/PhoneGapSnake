@@ -14,6 +14,7 @@
 	</author>
 
 	<preference name="permissions" value="none" />
+	<preference name="Orientation" value="potrait" />
 
 	<gap:splash src="res/Splash/splash.png" gap:platform="android" />
 	<preference name="SplashScreenDelay" value="3000" />
