@@ -6,11 +6,13 @@
 </head>
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery.touchswipe/1.6.4/jquery.touchSwipe.min.js"></script>
+<meta name="viewport"
+	content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
 <body>
 
 	<!-- Lets make a simple snake game -->
 	<canvas id="canvas"></canvas>
-<!-- 	<p id="dir"></p> -->
+	<!-- 	<p id="dir"></p> -->
 
 	<script>
 		$(document).ready(
@@ -39,8 +41,6 @@
 						//finally lets display the score
 						score = 0;
 
-						
-						
 						//Lets move the snake now using a timer which will trigger the paint function
 						//every 60ms
 						if (typeof game_loop != "undefined")
@@ -170,8 +170,8 @@
 											distance, duration, fingerCount,
 											fingerData) {
 										d = direction;
-// 										$('#direction').text(
-// 												"You swiped " + direction);
+										// 										$('#direction').text(
+										// 												"You swiped " + direction);
 									}
 								});
 					});
