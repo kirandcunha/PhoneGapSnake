@@ -10,12 +10,15 @@
 
 	<!-- Lets make a simple snake game -->
 	<canvas id="canvas"></canvas>
+<!-- 	<p id="dir"></p> -->
 
 	<script>
 		$(document).ready(
 				function() {
 					//Canvas stuff
 					var canvas = $("#canvas")[0];
+					canvas.width = screen.width;
+					canvas.height = screen.height;
 					var ctx = canvas.getContext("2d");
 					var w = $("#canvas").width();
 					var h = $("#canvas").height();
@@ -36,9 +39,7 @@
 						//finally lets display the score
 						score = 0;
 
-						canvas = document.getElementById("canvas");
-						canvas.width = document.body.clientWidth;
-						canvas.height = document.body.clientHeight;
+						
 						
 						//Lets move the snake now using a timer which will trigger the paint function
 						//every 60ms
@@ -150,20 +151,6 @@
 						ctx.strokeStyle = "white";
 						ctx.strokeRect(x * cw, y * cw, cw, cw);
 					}
-					$(function() {
-						$("#test")
-								.swipe(
-										{
-											//Generic swipe handler for all directions
-											swipe : function(event, direction,
-													distance, duration,
-													fingerCount, fingerData) {
-												$(this).text(
-														"You swiped "
-																+ direction);
-											}
-										});
-					});
 
 					function check_collision(x, y, array) {
 						//This function will check if the provided x/y coordinates exist
@@ -182,8 +169,9 @@
 									swipe : function(event, direction,
 											distance, duration, fingerCount,
 											fingerData) {
-										d = $('#direction').text(
-												"You swiped " + direction);
+										d = direction;
+// 										$('#direction').text(
+// 												"You swiped " + direction);
 									}
 								});
 					});
